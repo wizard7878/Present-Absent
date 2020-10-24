@@ -1,0 +1,12 @@
+{
+"name": "حضور و غیاب",
+"id": "5f2145c5c7feeb7cbddf6aae",
+"instantiable": true,
+"searchable": true,
+"fullscreen": false,
+"inline": false,
+"serveIndexes": {
+"main": "index",
+},
+"version": "0.0.0"
+}
