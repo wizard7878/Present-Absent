@@ -38,7 +38,7 @@ export default {
 
   methods:{
     async getName(){
-      let data = await axios.get(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`)
+      let data = await axios.get(`https://${this.$store.state.Host}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`)
       this.name = data.data[0][0].name
     },
     todayDate(){

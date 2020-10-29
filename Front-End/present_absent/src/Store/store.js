@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
         username:'',
         userId : '',
         groupId : W.wapp.getWisId(),
-        Host : 'localhost',
-        Port : 3000
+        Host : 'test.wapp.weblite.me/present-absent',
     }
 })
+
+

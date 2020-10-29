@@ -28,7 +28,6 @@ export default {
     data(){
         return{
             dates : [],
-            group_id:'myWisId',
             showCompo : false,
             historySelectedDate:'',
             selectedComponent: ''
@@ -36,7 +35,7 @@ export default {
     },
     methods:{
         async historydates(){
-            let dates = await axios(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/history/dates/${this.$store.state.groupId}`)
+            let dates = await axios(`https://${this.$store.state.Host}/users/history/dates/${this.$store.state.groupId}`)
             this.dates = dates.data
         },
         seehistorydate(date){

@@ -68,7 +68,7 @@ export default {
     },
     methods:{
         async getAllUsers(){
-           let users = await axios.get(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/admin/members/${this.$store.state.groupId}`)
+           let users = await axios.get(`https://${this.$store.state.Host}/users/admin/members/${this.$store.state.groupId}`)
             users.data.forEach(el =>{
               if(el.present_status){
                 this.allmembers[1].push(el)

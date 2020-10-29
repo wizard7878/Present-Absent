@@ -104,7 +104,7 @@ export default {
     },
 
       async submitPresent() {
-      let res = await axios.post(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/submit/${this.$store.state.userId}/${this.$store.state.groupId}`)
+      let res = await axios.post(`https://${this.$store.state.Host}/users/student/submit/${this.$store.state.userId}/${this.$store.state.groupId}`)
       if(res.data === false){
         this.showMessage('#fb4443','خطا','خطا','حضور شما قبلا ثبت شده')
       }
@@ -117,8 +117,8 @@ export default {
     async sendUser(){
       this.$store.state.username = this.usernameForm
       let ProfileImage = this.$store.state.image.split('').map(x => x === '/' ? '*' : x).join('')
-      let res = await axios.post(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/post/oneuser/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userId}/${ProfileImage}`)
-      await axios.post(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/sendstudent/${this.$store.state.userId}/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userStatus}`)
+      let res = await axios.post(`https://${this.$store.state.Host}/users/student/post/oneuser/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userId}/${ProfileImage}`)
+      await axios.post(`https://${this.$store.state.Host}/users/student/sendstudent/${this.$store.state.userId}/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userStatus}`)
       if(res.data === false){
         this.showMessage('#fb4443','خطا','خطا','شما قبلا ثبت نام کرده اید')
       }
@@ -162,7 +162,7 @@ export default {
 
   async mounted() {
     
-    let checkStatistics = await axios(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`) 
+    let checkStatistics = await axios(`https://${this.$store.state.Host}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`) 
         this.present_counter = checkStatistics.data[1].present
         this.absent_counter = checkStatistics.data[1].absent
         

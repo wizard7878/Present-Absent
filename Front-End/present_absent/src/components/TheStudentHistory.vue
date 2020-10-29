@@ -31,7 +31,7 @@ export default {
     },
     methods:{
         async getStudentHistory(){
-            let dates = await axios.get(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`)
+            let dates = await axios.get(`https://${this.$store.state.Host}/users/student/info/${this.$store.state.userId}/${this.$store.state.groupId}`)
             this.studentHistory = dates.data[0].reverse()
             console.log('His',dates.data)
         },

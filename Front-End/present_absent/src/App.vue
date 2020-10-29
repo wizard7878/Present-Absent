@@ -61,7 +61,7 @@ export default {
       },
 
       async sendUser(){
-        await axios.post(`http://${this.$store.state.Host}:${this.$store.state.Port}/users/student/sendstudent/${this.$store.state.userId}/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userStatus}`)
+        await axios.post(`https://${this.$store.state.Host}/users/student/sendstudent/${this.$store.state.userId}/${this.$store.state.groupId}/${this.$store.state.username}/${this.$store.state.userStatus}`)
     },
   },
     
